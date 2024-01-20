@@ -1,0 +1,133 @@
+﻿<Window x:Class="DND_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DND_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <ListBox Grid.Row="0"
+                 x:Name="CharsLb"
+                 SelectionMode="Multiple"
+                 SelectionChanged="ListBox_SelectionChanged">
+
+                <ListBoxItem>
+                </ListBoxItem>
+            </ListBox>
+            <Viewbox Stretch="Uniform " Grid.Row="1">
+                <Button x:Name="addSelectedCharButton" Grid.Row="1" Content="Добавить выбранных персонажей" Margin="0 5 0 0" Click="addSelectedCharButton_Click">
+                </Button>
+            </Viewbox>
+        </Grid>
+        <Viewbox Stretch="Uniform"  Grid.Row="2" Grid.Column="1"    >
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1"
+                    HorizontalAlignment="Center">
+            <Button Content="Удалить выбранных"   Margin="0 0 5 0" x:Name="deleteSelectedCharsButton" Click="deleteSelectedCharsButton_Click"></Button>
+            <Button x:Name="AddNewCharacter" Click="AddNewCharacter_Click" Content="Добавить новых" ></Button>            
+            
+        </StackPanel>
+        </Viewbox>
+        
+        
+        
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <ListBox Grid.Row="0"
+         x:Name="EnemiesLb"
+         SelectionMode="Multiple"
+         SelectionChanged="ListBox_SelectionChanged">
+                <Viewbox>
+                <ListBoxItem>
+
+                </ListBoxItem>
+                </Viewbox>
+            </ListBox>
+            <Viewbox Stretch="Uniform" Grid.Row="1">
+            <Button x:Name="addSelectedEnemyButton" Grid.Row="1" Content="Добавить выбранных противников" Margin="0 5 0 0" Click="addSelectedEnemyButton_Click">
+
+            </Button>
+            </Viewbox>
+        </Grid>
+        <Viewbox Stretch="Uniform" Grid.Row="2" Grid.Column="3">
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3"
+            HorizontalAlignment="Center">
+            <Button Content="Удалить выбранных" Margin="0 0 5 0"
+                    x:Name="deleteSelectedEnemyButton"
+                    Click="deleteSelectedEnemyButton_Click"></Button>
+                <Button Content="Добавить новых" x:Name="AddNewEnemy" Click="AddNewEnemy_Click"></Button>
+
+        </StackPanel>
+        </Viewbox>
+
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="Black" BorderThickness="0.4" Margin="10 0 5 0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
+                    <VirtualizingStackPanel Orientation="Vertical"  x:Name="SelectedCharsScrBar">
+                            
+                    </VirtualizingStackPanel>
+                    </ScrollViewer>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0.4" Grid.Column="1" Margin="5 0 10 0">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1"  Margin="5">
+                        <VirtualizingStackPanel Orientation="Vertical" x:Name="SelectedEnemiesScrBar">
+                            
+                        </VirtualizingStackPanel>
+                    </ScrollViewer>
+                </Border>
+                
+            </Grid>
+            <Border BorderBrush="Black" BorderThickness="0.4" Grid.Row="1" Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="70*"/>
+                    </Grid.RowDefinitions>
+                    <Viewbox Stretch="Uniform" Grid.Row="0">
+                        <StackPanel Orientation="Horizontal">
+                    <Button x:Name="updateLists" Content="Обновить списки" Margin="2" Click="updateLists_Click"></Button>
+                            <Button x:Name="clearLists" Content="Очистить" Margin="2" Click="clearLists_Click"></Button>
+                        </StackPanel>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform" Grid.Row="1">
+                        <Button Content="Начать" Margin="2" x:Name="startBattleButton" Click="startBattleButton_Click"></Button>
+                    </Viewbox>
+                </Grid>
+            
+            </Border>
+        </Grid>
+            
+            
+    </Grid>
+    
+</Window>

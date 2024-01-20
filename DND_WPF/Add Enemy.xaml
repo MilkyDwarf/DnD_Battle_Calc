@@ -1,0 +1,80 @@
+﻿<Window x:Class="DND_WPF.Add_Enemy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DND_WPF"
+        mc:Ignorable="d"
+        Title="Добавить противников" Height="550" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="380">
+
+            <TextBlock Text="Имя противника" FontSize="25"/>
+            <TextBox x:Name="charNameTB" FontSize="25"/>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="45*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Броня" FontSize="25" HorizontalAlignment="Center"/>
+                    <ComboBox x:Name="armorCB"></ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Оружие" FontSize="25" HorizontalAlignment="Center"/>
+                    <ComboBox x:Name="weaponCB"></ComboBox>
+                </StackPanel>
+            </Grid>
+            <TextBlock Text="Сила" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBox x:Name="charStrengthTB" FontSize="25" />
+            <TextBlock Text="Ловкость" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBox x:Name="charDexterityTB" FontSize="25"/>
+            <TextBlock Text="Телосложение" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBox x:Name="charConstitutionTB" FontSize="25"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <TextBlock Text="Здоровье" FontSize="25"/>
+                    <TextBox x:Name="charHpTB" FontSize="25"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Vertical">
+                    <TextBlock Text="Класс доспеха" FontSize="25"/>
+                    <TextBox x:Name="charDcTB" FontSize="25"/>
+                </StackPanel>
+            </Grid>
+            <Grid Width="330"
+                  Height="80">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="1" Grid.Row="1" x:Name="confirmButton" Content="Сохранить" FontSize="25" Click="confirmButton_Click" />
+                <Button Grid.Column="3" Grid.Row="1" x:Name="clearButton" Content="Стереть" FontSize="25" Click="clearButton_Click"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,81 @@
+﻿<Window x:Class="DND_WPF.Battle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DND_WPF"
+        mc:Ignorable="d"
+        Title="Battle" Height="420" Width="610" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Средний урон за ход" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="урон" Grid.Column="2" FontSize="20" x:Name="damageTB"/>
+                    <TextBlock Text="Средний класс доспеха" Grid.Column="0" Grid.Row="1" FontSize="20"/>
+                    <TextBlock Text="кд" Grid.Column="2" Grid.Row="1" FontSize="20"  x:Name="defenceTB"/>
+                    <TextBlock Text="Среднее количество хитов" Grid.Column="0" Grid.Row="2" FontSize="20"/>
+                    <TextBlock Text="хиты" Grid.Column="2" Grid.Row="2" FontSize="20"  x:Name="HpTB"/>
+                    <TextBlock Text="Средний шанс попадания" Grid.Column="0" Grid.Row="3" FontSize="20"/>
+                    <TextBlock Text="мод." Grid.Column="2" Grid.Row="3" FontSize="20"  x:Name="modTB"/>
+                </Grid>
+            </Border>
+            
+        </Grid>
+        <Grid Grid.Row="5"
+              Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="Закрыть" FontSize="20" x:Name="CloseButton" Margin="3" Click="CloseButton_Click" />
+        </Grid>
+        <StackPanel Orientation="Vertical" Grid.Row="3"  Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Grid.Row="3" Text="Количество проведенных боев:    " Grid.Column="1" FontSize="25"/>
+                <TextBlock Text="Количество " FontSize="25" x:Name="BattlesCountTB"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Grid.Row="3" Text="Количество побед:                         " Grid.Column="1" FontSize="25"/>
+                <TextBlock Text="Количество " FontSize="25" x:Name="WinCountTB"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Grid.Row="3" Text="Вероятность победы                      " Grid.Column="1" FontSize="25"/>
+                <TextBlock Text="Количество " FontSize="25" x:Name="WinRateTB"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
